@@ -23,7 +23,7 @@
 .footer ul a { color: rgba(255,255,255,0.8); font-size: 14.5px; }
 .footer ul a:hover { color: var(--accent); }
 .footer .brand { color: white; }
-.footer .brand-mark {background: #fff; padding: 4px; border-radius: 8px};
+.footer .brand-mark {background: #fff; padding: 4px; border-radius: 8px}
 .footer-bot {
   margin-top: 56px;
   padding-top: 24px;
