@@ -1,0 +1,22 @@
+/* ─── cta ─── */
+.cta {
+  background: var(--navy);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: clamp(48px, 6vw, 88px);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;
+  z-index: -1;
+}
+.cta h2 { color: white; max-width: 18ch; }
+.cta .lede { color: rgba(255,255,255,0.7); margin-top: 18px; }
+.cta-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn-on-dark.btn-ghost { color: white; border-color: rgba(255,255,255,0.25); }
+.btn-on-dark.btn-ghost:hover { background: rgba(255,255,255,0.08); }

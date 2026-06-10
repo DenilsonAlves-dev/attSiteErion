@@ -1,0 +1,42 @@
+/* ─────────────────────────────────────────────────────────────
+   Erion Sistemas — Landing
+   Stylesheet entry point. Imports modular files per section.
+   Order matters: tokens → base/helpers → components → layout
+   sections → responsive overrides → legacy.
+   ───────────────────────────────────────────────────────────── */
+
+/* foundation */
+@import "tokens.css";
+@import "base.css";
+@import "helpers.css";
+
+/* cross-cutting effects */
+@import "animations.css";
+
+/* layout components */
+@import "nav.css";
+@import "dropdown.css";
+
+/* page sections (top → bottom) */
+@import "hero.css";
+@import "stats.css";
+@import "como-funciona.css";
+@import "sistema.css";
+@import "vantagens.css";
+@import "segmentos.css";
+@import "precos.css";
+@import "clientes.css";
+@import "marquee.css";
+@import "faq.css";
+@import "cta.css";
+@import "footer.css";
+
+/* cross-section responsive overrides */
+@import "responsive.css";
+
+/* overlays */
+@import "sticky-cta.css";
+@import "modal.css";
+
+/* legacy: unused styles kept for parity — safe to drop */
+@import "legacy.css";

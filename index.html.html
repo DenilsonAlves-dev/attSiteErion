@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erion Sistemas — O sistema de vendas que faz seu negócio crescer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body style="font-family: &quot;Space Grotesk&quot;; background-color: rgb(255, 255, 255)">
+
+  <!-- ════════════════════ STICKY CTA BAR ════════════════════ -->
+  <div class="sticky-cta" id="stickyCta" role="region" aria-label="Atendimento rápido">
+    <div class="sticky-cta-inner">
+      <span class="sticky-cta-label">
+        <span class="sticky-cta-pulse" aria-hidden="true"></span>
+        <span class="sticky-cta-text"><span class="long">Equipe online agora — fale com a gente</span><span class="short">Equipe online agora</span></span>
+      </span>
+      <div class="sticky-cta-actions">
+        <a class="btn btn-primary sticky-cta-btn" href="#contato">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1.1 1-1.1 2.5 1.1 2.9 1.3 3.1c.2.2 2.2 3.3 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
+          </svg>
+          WhatsApp
+        </a>
+        <button class="sticky-cta-close" id="stickyCtaClose" type="button" aria-label="Fechar barra">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ NAV ════════════════════ -->
+  <header class="nav" data-screen-label="01 Nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" data-logo-anim aria-hidden="true">
+          <svg viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="lp" data-i="0" d="M19.5049 400.432L158.336 545H380.926L138.831 292.579L19.5049 400.432Z" fill="#327B32" />
+            <path class="lp" data-i="1" d="M252.421 138.832L0 380.926L2.29474 156.042L139.979 22.9474L252.421 138.832Z" fill="#0D2752" />
+            <path class="lp" data-i="2" d="M545 165.221L285.694 403.874L402.726 523.2L541.557 390.105L543.852 289.137L393.547 425.674L376.336 409.611L543.852 252.421L545 165.221Z" fill="#0D2752" />
+            <path class="lp" data-i="3" d="M270.779 384.369L157.19 273.074L270.779 158.337L384.369 273.074L270.779 384.369Z" fill="#0D2752" />
+            <path class="lp" data-i="4" d="M255.863 1.14737L164.074 0L406.168 255.863L522.053 139.979L388.958 3.44211L284.547 1.14737L442.884 167.516L424.526 183.579L255.863 1.14737Z" fill="#327B32" />
+          </svg>
+        </span>
+        Erion Sistemas
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="#sistema">Sistema</a>
+        <a class="nav-link" href="#vantagens">Vantagens</a>
+        <a class="nav-link" href="#segmentos">Segmentos</a>
+        <a class="nav-link" href="#clientes">Clientes</a>
+        <a class="nav-link" href="#precos">Preços</a>
+      </nav>
+      <span class="nav-spacer"></span>
+      <details class="dropdown">
+        <summary class="btn btn-ghost dropdown-trigger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Suporte remoto
+          <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="dropdown-menu">
+          <div class="dropdown-head">TeamViewer · Windows</div>
+          <a class="dropdown-item" href="https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe">
+            <div class="dropdown-item-main">
+              <span class="title">64 bits</span>
+              <span class="sub">recomendado · win 10/11</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </a>
+          <a class="dropdown-item" href="https://download.teamviewer.com/download/TeamViewer_Setup.exe">
+            <div class="dropdown-item-main">
+              <span class="title">32 bits</span>
+              <span class="sub">compatibilidade · windows antigo</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </details>
+      <a class="btn btn-ghost" href="#contato">Entrar</a>
+      <a class="btn btn-primary" href="#contato">Fale conosco →</a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="burger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+        <svg class="x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero" data-screen-label="02 Hero">
+    <svg class="hero-circuit" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+      <!-- static traces -->
+      <g>
+        <path class="trace" d="M 0 80 L 240 80 L 240 200 L 380 200 L 380 140 L 540 140 L 540 60" />
+        <path class="trace" d="M 60 0 L 60 60 L 180 60 L 180 280 L 90 280 L 90 480 L 200 480" />
+        <path class="trace" d="M 0 380 L 140 380 L 140 460 L 320 460 L 320 580 L 480 580 L 480 700" />
+        <path class="trace" d="M 620 700 L 620 600 L 480 600 L 480 540" />
+        <path class="trace" d="M 1200 140 L 1020 140 L 1020 240 L 1080 240 L 1080 320 L 940 320 L 940 220" />
+        <path class="trace" d="M 1200 540 L 1060 540 L 1060 440 L 1140 440 L 1140 320" />
+        <path class="trace" d="M 1100 0 L 1100 80 L 1180 80 L 1180 200" />
+        <path class="trace" d="M 900 700 L 900 620 L 780 620 L 780 540" />
+        <path class="trace" d="M 400 0 L 400 40 L 470 40" />
+        <path class="trace" d="M 720 0 L 720 70 L 660 70" />
+        <path class="trace" d="M 0 220 L 60 220 L 60 380" />
+        <path class="trace" d="M 280 700 L 280 640 L 210 640" />
+
+        <!-- central chip -->
+        <rect class="chip" x="840" y="80" width="100" height="60" rx="4" />
+        <path class="trace" d="M 860 80 L 860 60 M 890 80 L 890 60 M 920 80 L 920 60" />
+        <path class="trace" d="M 860 140 L 860 160 M 890 140 L 890 160 M 920 140 L 920 160" />
+        <path class="trace" d="M 840 100 L 810 100 M 840 120 L 810 120 M 940 100 L 970 100 M 940 120 L 970 120" />
+      </g>
+
+      <!-- junction / endpoint nodes -->
+      <g>
+        <rect class="node" x="238" y="78" width="4" height="4" rx="0.5" />
+        <rect class="node" x="378" y="138" width="4" height="4" rx="0.5" />
+        <rect class="node" x="538" y="138" width="4" height="4" rx="0.5" />
+        <rect class="node" x="178" y="58" width="4" height="4" rx="0.5" />
+        <rect class="node" x="178" y="278" width="4" height="4" rx="0.5" />
+        <rect class="node" x="88" y="278" width="4" height="4" rx="0.5" />
+        <rect class="node" x="88" y="478" width="4" height="4" rx="0.5" />
+        <rect class="node" x="138" y="378" width="4" height="4" rx="0.5" />
+        <rect class="node" x="318" y="458" width="4" height="4" rx="0.5" />
+        <rect class="node" x="478" y="578" width="4" height="4" rx="0.5" />
+        <rect class="node" x="1018" y="138" width="4" height="4" rx="0.5" />
+        <rect class="node" x="1078" y="238" width="4" height="4" rx="0.5" />
+        <rect class="node" x="938" y="238" width="4" height="4" rx="0.5" />
+        <rect class="node" x="1058" y="538" width="4" height="4" rx="0.5" />
+        <rect class="node" x="1138" y="438" width="4" height="4" rx="0.5" />
+        <rect class="node" x="1138" y="318" width="4" height="4" rx="0.5" />
+        <rect class="node" x="898" y="618" width="4" height="4" rx="0.5" />
+        <rect class="node" x="468" y="38" width="4" height="4" rx="0.5" />
+        <rect class="node" x="58" y="378" width="4" height="4" rx="0.5" />
+      </g>
+
+      <!-- animated current flow -->
+      <path class="flow" d="M 0 80 L 240 80 L 240 200 L 380 200 L 380 140 L 540 140 L 540 60" />
+      <path class="flow flow-2" d="M 1200 140 L 1020 140 L 1020 240 L 1080 240 L 1080 320 L 940 320 L 940 220" />
+      <path class="flow flow-3" d="M 0 380 L 140 380 L 140 460 L 320 460 L 320 580 L 480 580" />
+    </svg>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="h-display hero-type" style="font-size: 64px">
+            Venda <span class="type-text" id="typeText"></span><span class="type-caret" aria-hidden="true"></span>
+          </h1>
+          <p class="lede">
+            Do PDV ao contador, o Erion automatiza NF-e, estoque, caixa e financeiro — pra você cuidar do que importa: vender.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contato">
+              Solicite um orçamento
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="#demo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="6 4 20 12 6 20 6 4" fill="currentColor" />
+              </svg>
+              Ver demonstração
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span class="hero-meta-item"><span class="dot"></span>+2.000 clientes ativos</span>
+            <span class="hero-meta-item"><span class="dot"></span>SUPORTE HUMANO</span>
+            <span class="hero-meta-item"><span class="dot"></span>Windows · 100% atualizado</span>
+          </div>
+        </div>
+
+        <!-- Hero visual: stack of Erion system screenshots -->
+        <div class="hero-stack" aria-hidden="true">
+          <!-- back card: home / tech screen -->
+          <div class="hs-card hs-card-back">
+            <div class="hs-win-chrome">
+              <span class="hs-win-dot" data-c="r"></span>
+              <span class="hs-win-dot" data-c="y"></span>
+              <span class="hs-win-dot" data-c="g"></span>
+              <span class="hs-win-title">Erion Emissor</span>
+            </div>
+            <div class="hs-shot">
+              <img src="assets/erion-home.png" alt="" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- middle card: products / stock -->
+          <div class="hs-card hs-card-mid">
+            <div class="hs-win-chrome">
+              <span class="hs-win-dot" data-c="r"></span>
+              <span class="hs-win-dot" data-c="y"></span>
+              <span class="hs-win-dot" data-c="g"></span>
+              <span class="hs-win-title">Controle de Produtos</span>
+            </div>
+            <div class="hs-shot">
+              <img src="assets/erion-produtos.png" alt="" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- front card: PDV -->
+          <div class="hs-card hs-card-front">
+            <div class="hs-win-chrome">
+              <span class="hs-win-dot" data-c="r"></span>
+              <span class="hs-win-dot" data-c="y"></span>
+              <span class="hs-win-dot" data-c="g"></span>
+              <span class="hs-win-title">PDV · Caixa 02</span>
+              <span class="hs-win-badge">
+                <span class="hs-ping-dot"></span>
+                ao vivo
+              </span>
+            </div>
+            <div class="hs-shot">
+              <img src="assets/erion-pdv.png" alt="" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- floating notification badge 
+          <div class="hs-ping" id="heroPing">
+            <span class="hs-ping-dot"></span>
+            <span class="hs-ping-text">NFC-e #28471 autorizada · R$ 426,26</span>
+          </div>-->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ STATS ════════════════════ -->
+  <section class="stats" data-screen-label="03 Stats">
+    <div class="container">
+      <div class="stats-ribbon">
+        <div class="stat-inline">
+          <span class="v"><span class="kbd-num" data-count="2000">2.000</span><span class="suffix">+</span></span>
+          <span class="l">CLIENTES ATIVOS</span>
+        </div>
+        <span class="stats-divider"></span>
+        <div class="stat-inline">
+          <span class="v">+<span class="kbd-num" data-count="5">5</span><span class="suffix"> anos</span></span>
+          <span class="l">de experiência<br />no comércio brasileiro</span>
+        </div>
+        <span class="stats-divider"></span>
+        <div class="stat-inline">
+          <span class="v"><span class="kbd-num" data-count="12">12</span><span class="suffix">+</span></span>
+          <span class="l">SEGMENTOS ATENDIDOS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ HOW IT WORKS ════════════════════ -->
+  <section class="section" id="como-funciona" data-screen-label="04 Como funciona">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="h-section">Do cadastro à primeira venda em <em style="font-style: normal; color: var(--accent-2);">menos de 1 dia</em>.</h2>
+        <p class="lede">Sem instalação complicada, sem semanas de treinamento. Nosso time configura seu sistema, treina sua equipe e te acompanha.</p>
+      </div>
+
+      <div class="steps" data-reveal-stagger>
+        <div class="step">
+          <span class="num">01 / instalação</span>
+          <div class="icon" data-anim="monitor">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect class="anim-screen" x="2" y="4" width="20" height="14" rx="2" />
+              <line x1="8" y1="22" x2="16" y2="22" />
+              <line x1="12" y1="18" x2="12" y2="22" />
+            </svg>
+            <span class="anim-blip" aria-hidden="true"></span>
+          </div>
+          <h3 class="h-card">Conecta e configura</h3>
+          <p>Instalamos o Erion na sua máquina, importamos seus produtos e configuramos certificado digital e SEFAZ.</p>
+          <div class="arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">02 / treinamento</span>
+          <div class="icon" data-anim="doc">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line class="anim-line-a" x1="9" y1="14" x2="15" y2="14" />
+              <line class="anim-line-b" x1="9" y1="18" x2="13" y2="18" />
+            </svg>
+          </div>
+          <h3 class="h-card">Treina sua equipe</h3>
+          <p>Vídeos passo a passo, manuais e atendimento no WhatsApp. Sua equipe domina o sistema em poucas horas.</p>
+          <div class="arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">03 / vende</span>
+          <div class="icon" data-anim="cart">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8h13.2M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg>
+          </div>
+          <h3 class="h-card">Começa a vender</h3>
+          <p>Primeira NF-e emitida no mesmo dia. Suporte humano de segunda a sábado pra qualquer dúvida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SISTEMA · FEATURES ════════════════════ -->
+  <section class="section" id="sistema" data-screen-label="05 Sistema" style="background: var(--navy-fog); border-radius: 48px 48px 0 0;">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Sistema · Erion Emissor</span>
+        <h2 class="h-section">Tudo o que sua loja precisa em um só lugar.</h2>
+        <p class="lede">Seis módulos integrados que trabalham juntos pra simplificar a rotina do seu comércio.</p>
+      </div>
+
+      <div class="features" data-reveal-stagger>
+        <button class="feature" type="button" data-feature="nfe" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: rgb(255, 255, 255)">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="stroke: rgb(39, 173, 39)" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
+          <h3 class="h-card">NF-e / NFC-e</h3>
+          <p>Emissão rápida, contingência offline e envio automático de XML pro contador. Tudo certificado pela SEFAZ.</p>
+          <div class="tags"><span class="tag">XML</span><span class="tag">DANFE</span><span class="tag">contingência</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="pdv" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" style="stroke: rgb(255, 255, 255)" />
+            </svg>
+          </div>
+          <h3 class="h-card">Vendas & PDV</h3>
+          <p>Frente de caixa rápida, leitor de código de barras, múltiplas formas de pagamento e desconto por item.</p>
+          <div class="tags"><span class="tag">PIX</span><span class="tag">cartão</span><span class="tag">crediário</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="mdfe" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="1" style="stroke: rgb(255, 255, 255)" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+          </div>
+          <h3 class="h-card">MDF-e / CT-e</h3>
+          <p>Manifesto eletrônico de documentos e conhecimento de transporte para quem precisa expedir mercadoria.</p>
+          <div class="tags"><span class="tag">manifesto</span><span class="tag">transporte</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="estoque" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: rgb(255, 255, 255)">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" style="stroke: rgb(39, 173, 39)" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </div>
+          <h3 class="h-card">Estoque</h3>
+          <p>Cadastro manual, manifestação de nota. Saiba exatamente o que tem na prateleira, em tempo real.</p>
+          <div class="tags"><span class="tag">MANIFESTAÇÃO</span><span class="tag">curva ABC</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="sngpc" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: rgb(255, 255, 255)">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" style="stroke: rgb(39, 173, 39)" />
+            </svg>
+          </div>
+          <h3 class="h-card">SNGPC</h3>
+          <p>Para farmácias: controle de psicotrópicos e antibióticos conforme ANVISA. Envio mensal automático.</p>
+          <div class="tags"><span class="tag">ANVISA</span><span class="tag">psicotrópico</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+
+        <button class="feature" type="button" data-feature="caixa" aria-haspopup="dialog">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: rgb(255, 255, 255)">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" style="stroke: rgb(39, 173, 39)" />
+            </svg>
+          </div>
+          <h3 class="h-card">Caixa & Financeiro</h3>
+          <p>Abertura, fechamento, sangria, contas a pagar e a receber. Relatórios prontos pra apresentar ao contador.</p>
+          <div class="tags"><span class="tag">DRE</span><span class="tag">fluxo de caixa</span></div>
+          <span class="feature-cta">Ver demonstração →</span>
+        </button>
+      </div>
+
+      <!-- modal shared by all feature cards -->
+      <dialog class="feature-modal" id="featureModal" aria-labelledby="featureModalTitle">
+        <div class="feature-modal-inner">
+          <button class="feature-modal-close" type="button" aria-label="Fechar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="6" y1="18" x2="18" y2="6" />
+            </svg>
+          </button>
+          <div class="feature-modal-visual" id="featureModalVisual"></div>
+          <div class="feature-modal-body">
+            <span class="eyebrow" id="featureModalEyebrow">Módulo</span>
+            <h3 class="h-section" id="featureModalTitle" style="font-size: clamp(28px, 3vw, 40px); margin-top: 12px;"></h3>
+            <p class="lede" id="featureModalDesc" style="margin-top: 14px;"></p>
+            <ul class="feature-modal-list" id="featureModalList"></ul>
+            <a class="btn btn-primary" href="#contato" id="featureModalCta">Quero conhecer →</a>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  </section>
+
+  <!-- ════════════════════ VANTAGENS ════════════════════ -->
+  <section class="section" id="vantagens" data-screen-label="06 Vantagens" style="background: var(--navy-fog); padding-top: 0; border-radius: 0 0 48px 48px;">
+    <div class="container">
+      <div class="advantages">
+        <div class="adv-head" data-reveal>
+          <span class="eyebrow">Vantagens</span>
+          <h2 class="h-section" style="margin-top: 16px;">Por que escolher o Erion?</h2>
+          <p class="lede">Mais que um sistema — um parceiro pra rotina do seu negócio. Veja o que nos diferencia.</p>
+        </div>
+
+        <div class="adv-mockup" data-reveal>
+          <div class="adv-mock-bar">
+            <span class="title">
+              <img src="assets/erion-logo.png" alt="" />
+              Erion Emissor — Gráfico de Ranking de Faturamento
+            </span>
+            <span class="adv-mock-controls">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </span>
+          </div>
+          <div class="adv-mock-screen">
+            <video class="adv-mock-shot" src="assets/vantagens.mp4" autoplay loop muted playsinline preload="auto" aria-label="Demonstração do Erion Emissor"></video>
+          </div>
+        </div>
+
+        <div class="adv-list" data-reveal-stagger>
+          <div class="adv-item">
+            <div class="adv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="text">
+              <strong>Envio mensal de XMLs para o contador</strong>
+              <span>Automático, no formato que o seu contador precisa. Sem fricção.</span>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="text">
+              <strong>Passo a passo em texto e vídeo</strong>
+              <span>Treinamento completo, disponível 24h, pra sua equipe aprender no ritmo dela.</span>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="text">
+              <strong>Aceitamos sugestões de melhoria</strong>
+              <span>Você fala, a gente desenvolve. Nossa roadmap é guiada pelos clientes.</span>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="text">
+              <strong>Baixo tempo de resposta</strong>
+              <span>Suporte humano de segunda a sábado. Média de resposta abaixo de 5 minutos.</span>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <div class="text">
+              <strong>Acesso remoto para suporte</strong>
+              <span>Nossa equipe resolve problemas direto na sua máquina — sem você precisar explicar tudo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SEGMENTOS ════════════════════ -->
+  <section class="section" id="segmentos" data-screen-label="07 Segmentos">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Segmentos</span>
+        <h2 class="h-section">Feito para o pequeno e médio comércio brasileiro.</h2>
+        <p class="lede">Atendemos +12 segmentos com configurações específicas por ramo</p>
+      </div>
+
+      <div class="segments-grid" data-reveal-stagger>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l3-6h12l3 6M3 9v11h18V9M3 9h18" />
+              <path d="M9 13h6" />
+            </svg></span>Comerciais</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2l3 6 3-3 3 3 3-6M4 22h16M5 22V10h14v12" />
+            </svg></span>Lojas de Roupas</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="12" y1="8" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg></span>Farmácias</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 20h18M5 20V8l7-5 7 5v12M9 20v-6h6v6" />
+            </svg></span>Agropecuárias</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg></span>Elétricas</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="3" width="14" height="18" rx="1" />
+              <line x1="8" y1="8" x2="16" y2="8" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+              <line x1="8" y1="16" x2="13" y2="16" />
+            </svg></span>Papelarias</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 17h14v-3l-2-5H7l-2 5v3z" />
+              <circle cx="8" cy="17" r="2" />
+              <circle cx="16" cy="17" r="2" />
+            </svg></span>Elétrica automotiva</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="6" cy="6" r="3" />
+              <line x1="8.12" y1="8.12" x2="20" y2="20" />
+              <line x1="14" y1="14" x2="20" y2="20" />
+              <circle cx="6" cy="18" r="3" />
+              <line x1="8.12" y1="15.88" x2="20" y2="4" />
+            </svg></span>Salões de Beleza</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+            </svg></span>Panificadoras</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 21h18M5 21V11l7-6 7 6v10M9 21v-7h6v7" />
+            </svg></span>Construção</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="12" r="3" />
+              <path d="M12 12h9l-2-3M9 15v4M5 19h8" />
+            </svg></span>Locadoras</a>
+        <a class="segment" href="#"><span class="seg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="3" width="16" height="18" rx="1" />
+              <line x1="12" y1="3" x2="12" y2="21" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+            </svg></span>Vidraçarias</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+  <section class="section" id="clientes" data-screen-label="10 Clientes">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Clientes</span>
+        <h2 class="h-section">+2.000 negócios já transformaram suas vendas.</h2>
+      </div>
+
+      <div class="testimonials" data-reveal-stagger>
+        <div class="testimonial feature">
+          <div class="stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <blockquote>"O Erion foi a melhor opção pra minha empresa — diversos recursos, custo benefício excelente e suporte que responde de verdade."</blockquote>
+          <div class="author">
+            <div class="avatar">CA</div>
+            <div>
+              <div class="name">Carlos Alexandre</div>
+              <div class="role">JC Cyber · Itaituba/PA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <blockquote>"Migrei de outro sistema e nem se compara. Emissão sem dor de cabeça e suporte que resolve no mesmo dia."</blockquote>
+          <div class="author">
+            <div class="avatar">MR</div>
+            <div>
+              <div class="name">Mariana Ribeiro</div>
+              <div class="role">FARMÁCIA SAÚDE+ · RURÓPOLIS/PA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <blockquote>"Controle de estoque mudou nossa operação. Agora sei exatamente o que comprar antes de faltar — e meus relatórios saem prontos."</blockquote>
+          <div class="author">
+            <div class="avatar">JP</div>
+            <div>
+              <div class="name">João Pereira</div>
+              <div class="role">Agropecuária Vale Verde</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ LOGOS MARQUEE ════════════════════ -->
+  <section class="logos-marquee" data-screen-label="10.5 Logos" aria-label="Empresas que confiam no Erion">
+    <div class="container">
+      <p class="logos-label" data-reveal>Confiado por +2.000 negócios em todo o Brasil</p>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">JC Cyber</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Farmácia Saúde+</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Agropecuária Vale Verde</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Padaria São José</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Auto Elétrica Itaituba</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Boutique Bella</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Vidraçaria Tapajós</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Drogaria Popular</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Salão Glamour</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Materiais Construtor</span>
+        <span class="marquee-dot">●</span>
+        <!-- duplicated for seamless loop -->
+        <span class="marquee-item">JC Cyber</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Farmácia Saúde+</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Agropecuária Vale Verde</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Padaria São José</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Auto Elétrica Itaituba</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Boutique Bella</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Vidraçaria Tapajós</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Drogaria Popular</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Salão Glamour</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item">Materiais Construtor</span>
+        <span class="marquee-dot">●</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════ PRICING ════════════════════ -->
+  <section class="section" id="precos" data-screen-label="09 Preços">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Planos</span>
+        <h2 class="h-section">Preço justo, sem surpresa.</h2>
+        <p class="lede">Comece pelo plano que cabe no seu negócio hoje. Mude quando quiser — sem multa, sem letras miúdas.</p>
+      </div>
+
+      <div class="pricing-grid" style="grid-template-columns: minmax(0, 520px); justify-content: center;" data-reveal>
+        <div class="tier featured">
+          <span class="tier-badge">Plano único</span>
+          <span class="name">Erion Emissor</span>
+          <h3>Tudo o que sua loja precisa</h3>
+          <div class="price">
+            <span class="price-per" style="margin-right: 6px;">a partir de</span>
+            <span class="price-val">R$ 120</span>
+            <span class="price-per">/mês</span>
+          </div>
+          <ul class="feats">
+            <li>Emissão de NF-e e NFC-e ilimitadas</li>
+            <li>PDV, controle de estoque, caixa e financeiro</li>
+            <li>MDF-e, CT-e e SNGPC (farmácias) inclusos</li>
+            <li>Envio mensal de XMLs para o contador</li>
+            <li>Suporte humano de segunda a sábado</li>
+            <li>Acesso remoto sob demanda · sem fidelidade</li>
+          </ul>
+          <a class="btn btn-primary" href="#contato">Solicitar orçamento →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════ FAQ ════════════════════ -->
+  <section class="section" id="faq" data-screen-label="11 FAQ">
+    <div class="container" style="max-width: 920px;">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow">Dúvidas</span>
+        <h2 class="h-section">Perguntas frequentes.</h2>
+      </div>
+
+      <div class="faq-list" id="faqList" data-reveal-stagger>
+        <div class="faq-item open">
+          <button class="faq-q">Preciso de internet pra usar o Erion?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>Sim, para emissão de NF-e/NFC-e a comunicação com a SEFAZ é obrigatória. Mas o Erion tem modo de contingência offline — você continua vendendo mesmo se a internet cair e as notas são transmitidas automaticamente quando a conexão volta.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">O sistema funciona em Mac ou Linux?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>O Erion é otimizado para Windows (8, 10, 11).</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Migrar do meu sistema atual é complicado?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>Não. Nosso time importa cadastro de produtos, clientes e estoque dos sistemas mais comuns do mercado.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Tem fidelidade ou multa por cancelamento?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>Nenhuma. Você paga mensalmente e pode cancelar quando quiser — sem multa, sem letras miúdas. </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">E se eu precisar de uma funcionalidade que não existe?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>Aceitamos sugestões! Nossa roadmap é alimentada pelo feedback dos clientes — várias funcionalidades atuais nasceram de pedidos de quem usa o sistema no dia a dia.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Quanto tempo até começar a emitir notas?<span class="plus">+</span></button>
+          <div class="faq-a">
+            <div>Em média, menos de 1 dia útil. Instalação, configuração de certificado digital, importação de cadastros e primeira nota emitida no mesmo dia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ CTA ════════════════════ -->
+  <section class="section" id="contato" data-screen-label="12 CTA">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <span class="eyebrow on-dark">Vamos conversar</span>
+        <h2 class="h-section" style="margin-top: 16px;">Pronto pra modernizar suas vendas?</h2>
+        <p class="lede">Sem compromisso, sem fidelidade. Mostre seu comércio pra gente e descubra como o Erion pode ajudar.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#">Solicitar orçamento →</a>
+          <a class="btn btn-on-dark btn-ghost" href="#">Agendar demonstração</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer class="footer" data-screen-label="13 Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#">
+            <span class="brand-mark" data-logo-anim aria-hidden="true">
+              <svg viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="lp" data-i="0" d="M19.5049 400.432L158.336 545H380.926L138.831 292.579L19.5049 400.432Z" fill="#327B32" />
+                <path class="lp" data-i="1" d="M252.421 138.832L0 380.926L2.29474 156.042L139.979 22.9474L252.421 138.832Z" fill="#0D2752" />
+                <path class="lp" data-i="2" d="M545 165.221L285.694 403.874L402.726 523.2L541.557 390.105L543.852 289.137L393.547 425.674L376.336 409.611L543.852 252.421L545 165.221Z" fill="#0D2752" />
+                <path class="lp" data-i="3" d="M270.779 384.369L157.19 273.074L270.779 158.337L384.369 273.074L270.779 384.369Z" fill="#0D2752" />
+                <path class="lp" data-i="4" d="M255.863 1.14737L164.074 0L406.168 255.863L522.053 139.979L388.958 3.44211L284.547 1.14737L442.884 167.516L424.526 183.579L255.863 1.14737Z" fill="#327B32" />
+              </svg>
+            </span>
+            Erion Sistemas
+          </a>
+          <p style="margin-top: 18px; color: rgba(255,255,255,0.65); font-size: 14.5px; line-height: 1.6; max-width: 36ch;">
+            Empresa brasileira sediada no Pará. Há +4 anos desenvolvendo software para gestão de pequenos e médios negócios.
+          </p>
+          <div class="social" style="margin-top: 22px;">
+            <a href="#" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.5 14.4c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1.1 1-1.1 2.5 1.1 2.9 1.3 3.1c.2.2 2.2 3.3 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
+              </svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Produto</h4>
+          <ul>
+            <li><a href="#sistema">Sistema</a></li>
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#segmentos">Segmentos</a></li>
+            <li><a href="#precos">Preços</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Suporte remoto</h4>
+          <ul>
+            <li><a href="https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe">TeamViewer · 64 bits</a></li>
+            <li><a href="https://download.teamviewer.com/download/TeamViewer_Setup.exe">TeamViewer · 32 bits</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:suporte@erion.com.br">suporte@erion.com.br</a></li>
+            <li><a href="tel:+5593991216594">+55 93 9 9121-6594</a></li>
+            <li style="color: rgba(255,255,255,0.65); font-size: 14.5px;">Av. Manfredo Barata, 721<br />Aeroporto Velho, Itaituba — PA<br />68181-005</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bot">
+        <span>© 2026 Erion Sistemas. Todos os direitos reservados</span>
+        <span>Feito no Pará 🇧🇷</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════ Tweaks default ════════════════════ -->
+  <script>
+    window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "#27AD27"
+    }/*EDITMODE-END*/;
+  </script>
+
+  <!-- ════════════════════ Page interactions ════════════════════ -->
+  <script src="js/main.js" defer></script>
+
+  <!-- ════════════════════ Tweaks panel (React) ════════════════════ -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+
+  <div id="tweaks-root"></div>
+
+</body>
+
+</html>

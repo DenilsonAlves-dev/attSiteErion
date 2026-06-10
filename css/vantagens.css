@@ -1,0 +1,117 @@
+/* ─── vantagens (split) ─── */
+.advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.adv-head { max-width: 760px; margin-inline: auto; text-align: center; }
+.adv-head .lede { margin-top: 18px; margin-inline: auto; }
+
+.advantages .adv-mockup { width: 100%; }
+.advantages .adv-mock-shot { display: block; width: 100%; height: auto; }
+.advantages .adv-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 0;
+}
+.adv-list { display: flex; flex-direction: column; gap: 4px; margin-top: 36px; }
+.adv-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  align-items: flex-start;
+  border: 1px solid transparent;
+}
+.adv-item:hover { background: var(--paper); border-color: var(--line); }
+.adv-check {
+  flex: 0 0 28px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: grid; place-items: center;
+  margin-top: 2px;
+}
+.adv-item .text { flex: 1; }
+.adv-item .text strong { display: block; font-weight: 600; font-size: 16.5px; margin-bottom: 4px; }
+.adv-item .text span { color: var(--ink-muted); font-size: 14.5px; }
+
+.adv-mockup {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.adv-mock-bar {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: oklch(0.96 0.005 250);
+}
+.adv-mock-bar .title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.adv-mock-bar .title img { width: 16px; height: 16px; display: block; flex-shrink: 0; }
+.adv-mock-bar .adv-mock-controls { display: inline-flex; gap: 6px; flex-shrink: 0; }
+.adv-mock-bar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line-2); }
+.adv-mock-screen {
+  background: white;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.adv-mock-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* mock cards inside the advantages mockup */
+.mock-card {
+  background: white;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+}
+.mock-card .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); }
+.mock-card .num { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
+.mock-card .trend { font-family: var(--font-mono); font-size: 11px; color: var(--accent-2); margin-top: 4px; }
+.mock-card.wide { grid-column: span 2; }
+.mock-chart {
+  height: 80px;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+.mock-chart .b {
+  flex: 1;
+  background: var(--accent);
+  border-radius: 4px;
+  min-height: 12%;
+}
+
+@media (max-width: 720px) {
+  .advantages .adv-list { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,6 @@
+/* ─── helpers: section heading wrapper ─── */
+.section-head { max-width: 720px; }
+.section-head .h-section { margin-top: 16px; }
+.section-head .lede { margin-top: 18px; }
+.section-head.center { margin-inline: auto; text-align: center; }
+.section-head.center .lede { margin-inline: auto; }

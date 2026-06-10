@@ -1,0 +1,41 @@
+/* ─── design tokens ─── */
+:root {
+  /* Modernized brand palette (oklch) */
+  --ink: oklch(0.18 0.04 268);
+  --ink-soft: oklch(0.32 0.05 268);
+  --ink-muted: oklch(0.52 0.02 268);
+  --ink-fade: oklch(0.65 0.015 268);
+  --ink-hero-fade: oklch(0.93 0.015 268);
+
+  --navy: #215297;                         /* unified with navbar */
+  --navy-2: oklch(0.40 0.13 259);
+  --navy-fog: oklch(0.966 0.002 250);       /* light gray (neutralized) */
+  --navy-fog-2: oklch(0.945 0.003 250);
+  --blue: #346FBD;                          /* brand mid-blue (accents, highlights) */
+  --blue-soft: color-mix(in srgb, #346FBD 14%, white);
+
+  --accent: oklch(0.66 0.18 148);          /* default green */
+  --accent-2: oklch(0.58 0.18 148);
+  --accent-soft: oklch(0.94 0.08 148);
+  --accent-ink: oklch(0.22 0.10 148);
+
+  --bg: oklch(0.99 0.004 250);
+  --paper: #ffffff;
+  --line: oklch(0.92 0.012 250);
+  --line-2: oklch(0.86 0.018 250);
+
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 24, 60, 0.04), 0 1px 3px rgba(20, 24, 60, 0.06);
+  --shadow:    0 12px 32px -16px rgba(20, 24, 60, 0.18), 0 2px 6px rgba(20, 24, 60, 0.05);
+  --shadow-lg: 0 40px 80px -32px rgba(20, 24, 60, 0.28), 0 6px 14px rgba(20, 24, 60, 0.06);
+
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --container: 1280px;
+  --pad: clamp(20px, 4vw, 80px);
+}
