@@ -51,6 +51,10 @@
   }
   .segments-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .footer-bot{
+    flex-wrap: wrap;
+    gap: 8px;    
+  }
   .brand { font-size: 16px; }
   .nav .btn-primary { font-size: 12.5px; padding: 8px 12px; }
 }
