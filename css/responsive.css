@@ -11,7 +11,7 @@
   .hero-grid { grid-template-columns: 1fr; }
   .stats-ribbon { padding-block: 32px; gap: 16px; }
   .stat-inline { gap: 10px; }
-  .steps, .features, .pricing-grid, .testimonials { grid-template-columns: 1fr; }
+  .steps, .features, .pricing-grid { grid-template-columns: 1fr; }
   .advantages { grid-template-columns: 1fr; }
   .segments-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }

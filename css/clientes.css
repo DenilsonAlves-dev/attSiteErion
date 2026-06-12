@@ -1,51 +1,114 @@
-/* ─── testimonials (clientes) ─── */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* ─── clientes (mapa do Brasil) ─── */
+.map-wrap {
   margin-top: 40px;
-}
-.testimonial {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: clamp(24px, 4vw, 48px);
   display: flex;
   flex-direction: column;
-  transition: transform .25s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow .25s ease;
-}
-.testimonial:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-.testimonial.feature { background: var(--navy); color: white; border-color: var(--navy); }
-.testimonial .stars { display: flex; gap: 2px; color: var(--accent); }
-.testimonial blockquote {
-  font-family: var(--font-display);
-  font-size: 19px;
-  line-height: 1.4;
-  margin: 18px 0 0;
-  letter-spacing: -0.012em;
-  font-weight: 500;
-}
-.testimonial.feature blockquote { font-size: 22px; }
-.testimonial .author {
-  margin-top: auto;
-  padding-top: 28px;
-  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
 }
-.testimonial .avatar {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  display: grid; place-items: center;
+
+.brasil-map {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, rgba(0, 0, 0, 0.3) 100%);
+  mask-image: linear-gradient(to bottom, #000 70%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.map-shape {
+  fill: var(--blue-soft);
+  stroke: var(--blue);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+  stroke-opacity: 0.45;
+}
+
+.map-borders {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 0.75;
+  stroke-opacity: 0.28;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.map-pin .pin-dot {
+  fill: var(--accent);
+  stroke: var(--paper);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .25s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.map-pin:hover .pin-dot { transform: scale(1.5); }
+
+.map-pin .pin-pulse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pin-pulse 2.8s ease-out infinite;
+  animation-delay: var(--d, 0s);
+}
+@keyframes pin-pulse {
+  0%   { transform: scale(0.5); opacity: 0.85; }
+  70%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+.pin-label {
   font-family: var(--font-mono);
+  font-size: 11.5px;
   font-weight: 600;
-  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  pointer-events: none;
 }
-.testimonial.feature .avatar { background: color-mix(in oklch, var(--accent) 30%, transparent); color: white; }
-.testimonial .author .name { font-weight: 600; font-size: 14.5px; }
-.testimonial .author .role { font-family: var(--font-mono); font-size: 11px; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.map-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.map-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.map-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.map-caption {
+  margin: 0;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-pin .pin-pulse { animation: none; }
+}
