@@ -72,7 +72,6 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 2;
   z-index: 3;
   width: 36px; height: 36px;
   border-radius: 50%;
@@ -222,9 +221,15 @@
 #featureModalCta { align-self: flex-start; margin-top: auto; }
 
 @media (max-width: 720px) {
-  .feature-modal-inner { grid-template-columns: 1fr; max-height: 88vh; }
-  .feature-modal-visual { min-height: 240px; padding: 24px; }
-  .feature-modal-body { padding: 24px; }
+  /* empilha: imagem fixa no topo + corpo rolável (CTA sempre alcançável) */
+  .feature-modal { max-height: 92dvh; }
+  .feature-modal-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    max-height: 92dvh;
+  }
+  .feature-modal-visual { min-height: 200px; padding: 24px; }
+  .feature-modal-body { padding: 24px; min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
