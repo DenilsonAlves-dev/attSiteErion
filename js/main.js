@@ -7,13 +7,14 @@
 
 /* ─── Logo assembly animation ─── */
 (function () {
-  const cx = 272.5, cy = 272.5;
+  const cx = 272.5,
+    cy = 272.5;
   const pieces = [
-    { angle: -180, tx:  40, ty:  80, delay:   0 },
-    { angle:  135, tx: -80, ty: -40, delay: 120 },
-    { angle: -135, tx:  80, ty: -40, delay: 240 },
-    { angle:  270, tx:   0, ty:   0, delay: 360 },
-    { angle:  180, tx: -40, ty: -80, delay: 480 },
+    { angle: -180, tx: 40, ty: 80, delay: 0 },
+    { angle: 135, tx: -80, ty: -40, delay: 120 },
+    { angle: -135, tx: 80, ty: -40, delay: 240 },
+    { angle: 270, tx: 0, ty: 0, delay: 360 },
+    { angle: 180, tx: -40, ty: -80, delay: 480 },
   ];
   function play(mark) {
     const paths = mark.querySelectorAll('.lp');
@@ -26,7 +27,8 @@
       el.style.transform = `translate(${p.tx}px, ${p.ty}px) rotate(${p.angle}deg)`;
       el.getBoundingClientRect();
       setTimeout(() => {
-        el.style.transition = 'transform 0.7s cubic-bezier(0.34,1.3,0.64,1), opacity 0.4s ease';
+        el.style.transition =
+          'transform 0.7s cubic-bezier(0.34,1.3,0.64,1), opacity 0.4s ease';
         el.style.opacity = '1';
         el.style.transform = 'translate(0,0) rotate(0deg)';
       }, p.delay + 40);
@@ -44,22 +46,34 @@
     'com confiança.',
     'sem preocupações.',
     'com agilidade.',
-    'sem complicação.'
+    'sem complicação.',
   ];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) { el.textContent = phrases[0]; return; }
-  let pi = 0, ci = 0, deleting = false;
+  if (reduce) {
+    el.textContent = phrases[0];
+    return;
+  }
+  let pi = 0,
+    ci = 0,
+    deleting = false;
   function tick() {
     const word = phrases[pi];
     if (!deleting) {
       ci++;
       el.textContent = word.slice(0, ci);
-      if (ci === word.length) { deleting = true; return setTimeout(tick, 1900); }
+      if (ci === word.length) {
+        deleting = true;
+        return setTimeout(tick, 1900);
+      }
       setTimeout(tick, 62 + Math.random() * 55);
     } else {
       ci--;
       el.textContent = word.slice(0, ci);
-      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; return setTimeout(tick, 380); }
+      if (ci === 0) {
+        deleting = false;
+        pi = (pi + 1) % phrases.length;
+        return setTimeout(tick, 380);
+      }
       setTimeout(tick, 34);
     }
   }
@@ -94,7 +108,7 @@
 
 /* ─── Close <details>/dropdowns when clicking outside ─── */
 document.addEventListener('click', (e) => {
-  document.querySelectorAll('details.dropdown[open]').forEach(d => {
+  document.querySelectorAll('details.dropdown[open]').forEach((d) => {
     if (!d.contains(e.target)) d.removeAttribute('open');
   });
 });
@@ -105,19 +119,30 @@ document.addEventListener('click', (e) => {
   if (!wrap) return;
   const cards = wrap.querySelectorAll('.screen-card');
   const dots = wrap.querySelectorAll('.screen-dot');
-  let i = 0, timer = null;
+  let i = 0,
+    timer = null;
   function go(n) {
     i = (n + cards.length) % cards.length;
     cards.forEach((c, idx) => c.classList.toggle('is-active', idx === i));
     dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
   }
-  function tick() { go(i + 1); }
-  function start() { stop(); timer = setInterval(tick, 4200); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  dots.forEach(d => d.addEventListener('click', () => {
-    go(parseInt(d.dataset.go, 10));
-    start();
-  }));
+  function tick() {
+    go(i + 1);
+  }
+  function start() {
+    stop();
+    timer = setInterval(tick, 4200);
+  }
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+  dots.forEach((d) =>
+    d.addEventListener('click', () => {
+      go(parseInt(d.dataset.go, 10));
+      start();
+    }),
+  );
   wrap.addEventListener('mouseenter', stop);
   wrap.addEventListener('mouseleave', start);
   start();
@@ -133,7 +158,7 @@ document.addEventListener('click', (e) => {
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   });
-  nav.querySelectorAll('.nav-link').forEach(a => {
+  nav.querySelectorAll('.nav-link').forEach((a) => {
     a.addEventListener('click', () => {
       nav.classList.remove('is-open');
       btn.setAttribute('aria-expanded', 'false');
@@ -142,18 +167,22 @@ document.addEventListener('click', (e) => {
 })();
 
 /* ─── FAQ accordion ─── */
-document.querySelectorAll('.faq-q').forEach(btn => {
+document.querySelectorAll('.faq-q').forEach((btn) => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    document
+      .querySelectorAll('.faq-item')
+      .forEach((i) => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
 });
 
 /* ─── NF-e flow demo loop ─── */
 (function () {
-  const steps = Array.from(document.querySelectorAll('#nfeFlow .nfe-flow-step'));
+  const steps = Array.from(
+    document.querySelectorAll('#nfeFlow .nfe-flow-step'),
+  );
   if (!steps.length) return;
   let i = 0;
   function tick() {
@@ -167,7 +196,8 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         if (timeEl) {
           const c = document.createElement('span');
           c.className = 'check';
-          c.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+          c.innerHTML =
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
         }
       } else if (idx === i) {
         s.classList.add('active');
@@ -196,43 +226,31 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   const DATA = {
     nfe: {
       eyebrow: 'Módulo · Fiscal',
-      title: 'NF-e / NFC-e — emissão sem dor de cabeça',
+      title: 'NF-e / NFC-e / NFS-e — emissão sem dor de cabeça',
       desc: 'Tudo certificado pela SEFAZ. Emite, transmite, contingencia e envia o XML automaticamente pro contador.',
       bullets: [
         'Modo contingência offline — vende mesmo sem internet',
         'Cancelamento, inutilização e carta de correção em 2 cliques',
-        'DANFE em PDF e impressão direta no bobina',
-        'Envio mensal automático de XMLs por e-mail pro contador',
+        'DANFE em PDF e impressão',
+        'Envio mensal de XMLs por e-mail pro contador',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>NF-e em emissão</span><span class="pill">autorizada</span></div>
-          <div class="fm-mock-row"><span class="k">número</span><span class="v">00921-001</span></div>
-          <div class="fm-mock-row"><span class="k">série</span><span class="v">1</span></div>
-          <div class="fm-mock-row"><span class="k">CFOP</span><span class="v">5102</span></div>
-          <div class="fm-mock-row"><span class="k">status SEFAZ</span><span class="v ok">100 · OK</span></div>
-          <div class="fm-mock-total"><span class="l">valor total</span><span class="v">R$ 1.428,90</span></div>
-        </div>`,
+      image: 'assets/cards/1.jpg',
+      imageAlt: 'Emissão de nota fiscal e cupom fiscal',
+      mock: `...`,
     },
     pdv: {
       eyebrow: 'Módulo · Vendas',
       title: 'PDV — feche venda em 8 segundos',
       desc: 'Frente de caixa otimizada pra teclado, leitor de código de barras e múltiplos meios de pagamento.',
       bullets: [
-        'Atalhos no teclado pra desconto, busca, finalizar',
+        'Atalhos no teclado pra endereço de entrega, importar kits, consultar preços, finalizar',
         'PIX, débito, crédito, dinheiro, crediário e múltiplo',
         'Sangria, suprimento e fechamento de caixa por operador',
-        'Funciona com TEF integrado ou maquininha avulsa',
+        'Maquininha avulsa',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>Caixa 02 · ao vivo</span><span class="pill">PIX OK</span></div>
-          <div class="fm-mock-row"><span class="k">item 01 · Coca 2L</span><span class="v">R$ 12,90</span></div>
-          <div class="fm-mock-row"><span class="k">item 02 · Pão francês kg</span><span class="v">R$ 18,40</span></div>
-          <div class="fm-mock-row"><span class="k">item 03 · Queijo prato 200g</span><span class="v">R$ 14,80</span></div>
-          <div class="fm-mock-row"><span class="k">desconto</span><span class="v">- R$ 1,20</span></div>
-          <div class="fm-mock-total"><span class="l">total da venda</span><span class="v">R$ 44,90</span></div>
-        </div>`,
+      image: 'assets/cards/2.jpg',
+      imageAlt: 'Vendas otimizadas',
+      mock: `...`,
     },
     mdfe: {
       eyebrow: 'Módulo · Transporte',
@@ -244,35 +262,23 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         'CT-e para transportadores parceiros',
         'Geração de DACTE e DAMDFE em PDF',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>MDF-e #047</span><span class="pill">em rota</span></div>
-          <div class="fm-mock-row"><span class="k">UF origem</span><span class="v">PA</span></div>
-          <div class="fm-mock-row"><span class="k">UF destino</span><span class="v">PA</span></div>
-          <div class="fm-mock-row"><span class="k">veículo</span><span class="v">MERCEDES · QAB-1234</span></div>
-          <div class="fm-mock-row"><span class="k">NF-e vinculadas</span><span class="v">12</span></div>
-          <div class="fm-mock-total"><span class="l">peso bruto</span><span class="v">2.840 kg</span></div>
-        </div>`,
+      image: 'assets/cards/3.jpg',
+      imageAlt: 'Emissão de conhecimento e manifesto',
+      mock: `...`,
     },
     estoque: {
       eyebrow: 'Módulo · Operação',
       title: 'Estoque em tempo real',
-      desc: 'Sabe exatamente o que tem na prateleira. Manifestação de notas, curva ABC e alerta de mínimo.',
+      desc: 'Sabe exatamente o que tem na prateleira. Manifestação de notas, curva ABC e estoque mínimo.',
       bullets: [
         'Manifestação eletrônica de notas de fornecedor (entrada automática)',
-        'Alerta visual quando produto bate estoque mínimo',
+        'Relatório de Entradas e Saídas de NF-e',
         'Curva ABC pra decidir o que comprar primeiro',
-        'Múltiplos depósitos / lojas com saldo separado',
+        'Kit de Produtos e lista de preços',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>Top produtos · semana</span><span class="pill">curva A</span></div>
-          <div class="fm-mock-row"><span class="k">Coca-Cola 2L</span><span class="v ok">142 un</span></div>
-          <div class="fm-mock-row"><span class="k">Pão francês kg</span><span class="v ok">98 kg</span></div>
-          <div class="fm-mock-row"><span class="k">Queijo mussarela 1kg</span><span class="v">47 un</span></div>
-          <div class="fm-mock-row"><span class="k">Arroz tipo 1 5kg</span><span class="v">32 un</span></div>
-          <div class="fm-mock-total"><span class="l">faturamento semana</span><span class="v">R$ 28.491</span></div>
-        </div>`,
+      image: 'assets/cards/4.jpg',
+      imageAlt: 'Controle de estoque',
+      mock: `...`,
     },
     sngpc: {
       eyebrow: 'Módulo · Farmácia',
@@ -281,18 +287,11 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       bullets: [
         'Cadastro de receituário com validação de CRM e CID',
         'Controle de saldo por princípio ativo',
-        'Geração e envio automático do arquivo mensal pra ANVISA',
-        'Histórico completo de movimentação por lote',
+        'Histórico de movimentação por lote',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>Envio mensal · ANVISA</span><span class="pill">enviado</span></div>
-          <div class="fm-mock-row"><span class="k">competência</span><span class="v">05/2026</span></div>
-          <div class="fm-mock-row"><span class="k">protocolo</span><span class="v">SNGPC.428712</span></div>
-          <div class="fm-mock-row"><span class="k">receitas processadas</span><span class="v">187</span></div>
-          <div class="fm-mock-row"><span class="k">status</span><span class="v ok">aceito</span></div>
-          <div class="fm-mock-total"><span class="l">próximo envio</span><span class="v">10/06</span></div>
-        </div>`,
+      image: 'assets/cards/5.jpg',
+      imageAlt: 'SNGPC',
+      mock: `...`,
     },
     caixa: {
       eyebrow: 'Módulo · Financeiro',
@@ -301,31 +300,34 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       bullets: [
         'Conciliação automática de PIX, cartão e dinheiro',
         'Relatório de DRE comparativo mês a mês',
-        'Centro de custos por loja, departamento ou projeto',
-        'Exportação direta pra Excel ou PDF',
+        'Diversos relatórios',
+        'Exportação direta para PDF',
       ],
-      mock: `
-        <div class="fm-mock">
-          <div class="fm-mock-head"><span>Fluxo · 09/06</span><span class="pill">positivo</span></div>
-          <div class="fm-mock-row"><span class="k">entradas (vendas)</span><span class="v ok">+ R$ 8.420,00</span></div>
-          <div class="fm-mock-row"><span class="k">saídas (fornecedor)</span><span class="v">- R$ 2.180,00</span></div>
-          <div class="fm-mock-row"><span class="k">saídas (folha)</span><span class="v">- R$ 1.250,00</span></div>
-          <div class="fm-mock-row"><span class="k">a pagar amanhã</span><span class="v">R$ 940,00</span></div>
-          <div class="fm-mock-total"><span class="l">saldo do dia</span><span class="v">R$ 4.990,00</span></div>
-        </div>`,
+      image: 'assets/cards/6.jpg',
+      imageAlt: 'Financeiro e caixa',
+      mock: `...`,
     },
   };
 
   let lastTrigger = null;
 
+  // placeholder até cada módulo ter a sua própria imagem (assets/cards/2.jpg, 3.jpg, …)
+  const PLACEHOLDER_IMG = 'assets/cards/1.jpg';
+
+  // o painel da esquerda é sempre uma imagem full-bleed: usa d.image se houver, senão o placeholder
+  function visualFor(d) {
+    const src = d.image || PLACEHOLDER_IMG;
+    return `<img class="fm-mock-img" src="${src}" alt="${d.imageAlt || d.title}" />`;
+  }
+
   function open(key) {
     const d = DATA[key];
     if (!d) return;
-    visual.innerHTML = d.mock;
+    visual.innerHTML = visualFor(d);
     eyebrow.textContent = d.eyebrow;
     titleEl.textContent = d.title;
     descEl.textContent = d.desc;
-    listEl.innerHTML = d.bullets.map(b => `<li>${b}</li>`).join('');
+    listEl.innerHTML = d.bullets.map((b) => `<li>${b}</li>`).join('');
     modal.showModal();
   }
   function close() {
@@ -333,7 +335,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     lastTrigger?.focus();
   }
 
-  triggers.forEach(t => {
+  triggers.forEach((t) => {
     t.addEventListener('click', () => {
       lastTrigger = t;
       open(t.dataset.feature);
@@ -360,7 +362,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     const mid = window.innerHeight / 2;
     let closest = null;
     let best = Infinity;
-    steps.forEach(s => {
+    steps.forEach((s) => {
       const r = s.getBoundingClientRect();
       const center = r.top + r.height / 2;
       const dist = Math.abs(center - mid);
@@ -369,15 +371,19 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         closest = s;
       }
     });
-    steps.forEach(s => s.classList.toggle('is-active', s === closest));
+    steps.forEach((s) => s.classList.toggle('is-active', s === closest));
     ticking = false;
   }
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
-  }, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
   window.addEventListener('resize', update);
   update();
 })();
@@ -403,8 +409,8 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         hour12: false,
       });
       const parts = fmt.formatToParts(new Date());
-      const weekday = parts.find(p => p.type === 'weekday')?.value;  // "Mon", "Tue", ...
-      const hour = parseInt(parts.find(p => p.type === 'hour')?.value, 10);
+      const weekday = parts.find((p) => p.type === 'weekday')?.value; // "Mon", "Tue", ...
+      const hour = parseInt(parts.find((p) => p.type === 'hour')?.value, 10);
       if (weekday === 'Sun') return { online: false };
       if (weekday === 'Sat') return { online: hour >= 8 && hour < 12 };
       return { online: hour >= 8 && hour < 18 };
@@ -418,10 +424,11 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     const longEl = bar.querySelector('.sticky-cta-text .long');
     const shortEl = bar.querySelector('.sticky-cta-text .short');
     if (online) {
-      if (longEl)  longEl.textContent  = 'Equipe online agora — fale com a gente';
+      if (longEl) longEl.textContent = 'Equipe online agora — fale com a gente';
       if (shortEl) shortEl.textContent = 'Equipe online';
     } else {
-      if (longEl)  longEl.textContent  = 'Fora do horário — seg-sex 08-18h · sáb 08-12h';
+      if (longEl)
+        longEl.textContent = 'Fora do horário — seg-sex 08-18h · sáb 08-12h';
       if (shortEl) shortEl.textContent = 'Fora do horário';
     }
   }
@@ -433,17 +440,24 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   function update() {
     const trigger = window.innerHeight * 0.6;
     const past = window.scrollY > trigger;
-    const footerRect = document.querySelector('.footer')?.getBoundingClientRect();
-    const footerVisible = footerRect && footerRect.top < window.innerHeight - 40;
+    const footerRect = document
+      .querySelector('.footer')
+      ?.getBoundingClientRect();
+    const footerVisible =
+      footerRect && footerRect.top < window.innerHeight - 40;
     bar.classList.toggle('is-visible', past && !footerVisible);
     ticking = false;
   }
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
-  }, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
   closeBtn?.addEventListener('click', () => {
     bar.classList.remove('is-visible');
     sessionStorage.setItem(STORAGE_KEY, '1');
@@ -454,54 +468,62 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
 /* ─── Scroll-reveal (fade-up on enter) ─── */
 (function () {
-  const targets = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+  const targets = document.querySelectorAll(
+    '[data-reveal], [data-reveal-stagger]',
+  );
   if (!targets.length) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) {
-    targets.forEach(el => el.classList.add('is-visible'));
+    targets.forEach((el) => el.classList.add('is-visible'));
     return;
   }
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  targets.forEach(el => obs.observe(el));
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+  );
+  targets.forEach((el) => obs.observe(el));
 })();
 
 /* ─── Stats counter on scroll ─── */
 (function () {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseFloat(el.dataset.count);
-      if (!target) return;
-      const fmt = el.textContent.trim();
-      const isDecimal = fmt.includes(',') && target < 100;
-      const isCompact = fmt.includes('M') || fmt.includes('K');
-      let cur = 0;
-      const dur = 1400;
-      const start = performance.now();
-      function step(now) {
-        const t = Math.min(1, (now - start) / dur);
-        const eased = 1 - Math.pow(1 - t, 3);
-        cur = target * eased;
-        if (isCompact) {
-          el.textContent = (cur / 1000000).toFixed(2).replace('.', ',') + 'M';
-        } else if (isDecimal) {
-          el.textContent = cur.toFixed(1).replace('.', ',') + 's';
-        } else {
-          el.textContent = Math.floor(cur).toLocaleString('pt-BR');
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.dataset.count);
+        if (!target) return;
+        const fmt = el.textContent.trim();
+        const isDecimal = fmt.includes(',') && target < 100;
+        const isCompact = fmt.includes('M') || fmt.includes('K');
+        let cur = 0;
+        const dur = 1400;
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          cur = target * eased;
+          if (isCompact) {
+            el.textContent = (cur / 1000000).toFixed(2).replace('.', ',') + 'M';
+          } else if (isDecimal) {
+            el.textContent = cur.toFixed(1).replace('.', ',') + 's';
+          } else {
+            el.textContent = Math.floor(cur).toLocaleString('pt-BR');
+          }
+          if (t < 1) requestAnimationFrame(step);
         }
-        if (t < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      obs.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('[data-count]').forEach(el => obs.observe(el));
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    },
+    { threshold: 0.5 },
+  );
+  document.querySelectorAll('[data-count]').forEach((el) => obs.observe(el));
 })();
