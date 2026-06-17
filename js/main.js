@@ -234,7 +234,7 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'DANFE em PDF e impressão',
         'Envio mensal de XMLs por e-mail pro contador',
       ],
-      image: 'assets/cards/1.jpg',
+      image: 'assets/cards/1.webp',
       imageAlt: 'Emissão de nota fiscal e cupom fiscal',
       mock: `...`,
     },
@@ -248,7 +248,7 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'Sangria, suprimento e fechamento de caixa por operador',
         'Maquininha avulsa',
       ],
-      image: 'assets/cards/2.jpg',
+      image: 'assets/cards/2.webp',
       imageAlt: 'Vendas otimizadas',
       mock: `...`,
     },
@@ -262,7 +262,7 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'CT-e para transportadores parceiros',
         'Geração de DACTE e DAMDFE em PDF',
       ],
-      image: 'assets/cards/3.jpg',
+      image: 'assets/cards/3.webp',
       imageAlt: 'Emissão de conhecimento e manifesto',
       mock: `...`,
     },
@@ -276,7 +276,7 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'Curva ABC pra decidir o que comprar primeiro',
         'Kit de Produtos e lista de preços',
       ],
-      image: 'assets/cards/4.jpg',
+      image: 'assets/cards/4.webp',
       imageAlt: 'Controle de estoque',
       mock: `...`,
     },
@@ -289,7 +289,7 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'Controle de saldo por princípio ativo',
         'Histórico de movimentação por lote',
       ],
-      image: 'assets/cards/5.jpg',
+      image: 'assets/cards/5.webp',
       imageAlt: 'SNGPC',
       mock: `...`,
     },
@@ -303,16 +303,29 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
         'Diversos relatórios',
         'Exportação direta para PDF',
       ],
-      image: 'assets/cards/6.jpg',
+      image: 'assets/cards/6.webp',
       imageAlt: 'Financeiro e caixa',
       mock: `...`,
     },
   };
 
   let lastTrigger = null;
+  let savedScrollY = 0;
 
-  // placeholder até cada módulo ter a sua própria imagem (assets/cards/2.jpg, 3.jpg, …)
-  const PLACEHOLDER_IMG = 'assets/cards/1.jpg';
+  // trava o scroll da página de fundo enquanto o modal está aberto (compatível com iOS)
+  function lockScroll() {
+    savedScrollY = window.scrollY;
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.classList.add('modal-open');
+  }
+  function unlockScroll() {
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
+  // placeholder até cada módulo ter a sua própria imagem (assets/cards/2.webp, 3.jpg, …)
+  const PLACEHOLDER_IMG = 'assets/cards/1.webp';
 
   // o painel da esquerda é sempre uma imagem full-bleed: usa d.image se houver, senão o placeholder
   function visualFor(d) {
@@ -329,10 +342,12 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
     descEl.textContent = d.desc;
     listEl.innerHTML = d.bullets.map((b) => `<li>${b}</li>`).join('');
     modal.showModal();
+    lockScroll();
   }
   function close() {
     if (modal.open) modal.close();
-    lastTrigger?.focus();
+    lastTrigger?.focus({ preventScroll: true });
+    unlockScroll();
   }
 
   triggers.forEach((t) => {
@@ -351,6 +366,8 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
     e.preventDefault();
     close();
   });
+  // qualquer caminho de fechamento dispara 'close' → restaura o scroll da página
+  modal.addEventListener('close', unlockScroll);
 })();
 
 /* ─── Active step indicator (highlight the step closest to viewport center) ─── */
